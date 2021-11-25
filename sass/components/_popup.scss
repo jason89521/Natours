@@ -20,8 +20,8 @@
         display: table;
         overflow: hidden;
         opacity: 0;
-        transform: translate(-50%, -50%) scale(.5);
-        transition: all .4s .2s;
+        transform: translate(-50%, -50%) scale(0.5);
+        transition: all 0.4s 0.2s;
     }
 
     &__left {
@@ -88,4 +88,32 @@
         }
     }
 
+    @include respond(tab-port) {
+        &__content {
+            display: block;
+        }
+
+        &__left {
+            width: 100%;
+            display:block;
+        }
+
+        &__right {
+            width: 100%;
+            display: block;
+            padding: 3rem 5rem;
+        }
+
+        &__img {
+            display: inline-block;
+            width: auto;
+            height: 20rem;
+        }
+    }
+
+    @include respond(phone) {
+        &__img {
+            height: 15rem;
+        }
+    }
 }
